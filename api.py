@@ -7,10 +7,10 @@ app = Flask(__name__)
 
 app.secret_key = 'some_secret'
 
-app.config['MYSQL_HOST'] = '192.168.0.101'
-app.config['MYSQL_PORT'] = 3066
-app.config['MYSQL_USER'] = 'mysql'
-#app.config['MYSQL_PASSWORD'] = 'ksalf'
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_PORT'] = 3301
+app.config['MYSQL_USER'] = 'flask'
+app.config['MYSQL_PASSWORD'] = 'ksalf'
 app.config['MYSQL_DB'] = 'social_network'
  
 mysql = MySQL(app)
