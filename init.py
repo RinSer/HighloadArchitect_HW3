@@ -18,15 +18,15 @@ with connection.cursor() as cursor:
     print("Have successfully executed initial migration!")
 
     # add test data
-    fake = Faker()
-    for i in range(100):
-        for j in range(100):
-            cursor.execute('''INSERT INTO 
-            profiles(firstName, secondName, interests, city) 
-            VALUES(%s,%s,%s,%s)''',\
-            (fake.first_name(), fake.last_name(), fake.text(), fake.city()))
-        connection.commit()
-        print("Have committed "+str((i+1)*100)+" profiles")
+    # fake = Faker()
+    # for i in range(100):
+    #     for j in range(100):
+    #         cursor.execute('''INSERT INTO 
+    #         profiles(firstName, secondName, interests, city) 
+    #         VALUES(%s,%s,%s,%s)''',\
+    #         (fake.first_name(), fake.last_name(), fake.text(), fake.city()))
+    #     connection.commit()
+    #     print("Have committed "+str((i+1)*100)+" profiles")
 
 connection.close()
 

@@ -21,7 +21,7 @@ def mysql2():
 
 def mysql3():
     return connect(host='localhost',
-                    port=3302,
+                    port=3303,
                     user='flask',
                     password='ksalf',
                     db='social_network')
@@ -51,13 +51,13 @@ def profiles():
             "interests": profile[3],
             "city": profile[4] } for profile in profiles], 200
     if request.method == 'POST':
-        conn = mysql()
+        conn = mysql3()
         cursor = conn.cursor()
         cursor.execute('''INSERT INTO 
             profiles(firstName, secondName, interests, city) 
             VALUES(%s,%s,%s,%s)''',\
             (fake.first_name(), fake.last_name(), fake.text(), fake.city()))
-        mysql.commit()
+        conn.commit()
         cursor.close()
         conn.close()
         return "ok", 200
@@ -86,7 +86,7 @@ def profile(id):
             "city": profile[4] }, 200
     if request.method == 'PUT':
         data = request.get_json()
-        conn = mysql()
+        conn = mysql3()
         cursor = conn.cursor()
         cursor.execute('''
             UPDATE profiles SET
@@ -97,7 +97,7 @@ def profile(id):
             WHERE id = %s''',\
             [data["firstName"], data["secondName"], 
             data["interests"], data["city"], id])
-        mysql.commit()
+        conn.commit()
         cursor.close()
         conn.close()
         return "ok", 200
