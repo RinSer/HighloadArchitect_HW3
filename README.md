@@ -11,7 +11,6 @@
 `FLUSH PRIVILEGES;`
 `CREATE DATABASE social_network;`
 4) Выполнить в текущей директории CLI команду `pip install -r requirements.txt` для установки зависимостей приложения.
-5) Выполнить в текущей директории CLI команду `py -3 -m flask --app api run` для локального запуска приложения (порт 5000).
-6) Сделать запрос на `http://localhost:5000/run_migration` для создания схемы данных в базе (этот шаг можно пропустить, он есть в Postman коллекции).
+5) Выполнить в текущей директории CLI команду `py -3 -m flask --app app run` для локального запуска приложения (порт 5000).
 
 Обновить requirements.txt: `py -3 -m  pipreqs.pipreqs --force`
