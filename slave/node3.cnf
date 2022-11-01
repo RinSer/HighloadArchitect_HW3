@@ -11,6 +11,11 @@ binlog_format=ROW
 default-storage-engine=innodb
 innodb_autoinc_lock_mode=2
 
+# semi-sync options
+loose-rpl_semi_sync_slave_enabled=1
+loose-rpl_semi_sync_master_timeout=3600000
+loose-rpl_semi_sync_master_wait_for_slave_count=1
+
 ### mysql general option
 bind-address    = 0.0.0.0
 user            = mysql

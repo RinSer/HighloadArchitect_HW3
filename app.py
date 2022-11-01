@@ -19,6 +19,13 @@ def mysql2():
                     password='ksalf',
                     db='social_network')
 
+def mysql3():
+    return connect(host='localhost',
+                    port=3302,
+                    user='flask',
+                    password='ksalf',
+                    db='social_network')
+
 fake = Faker()
 
 
